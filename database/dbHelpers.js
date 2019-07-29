@@ -11,7 +11,9 @@ function register(newUser) {
 };
 
 function findBy(username) {
-    return db('users').where({ username }).first();
+    return db('users')
+        .where({username})
+        .first();
 };
 
 function get() {
