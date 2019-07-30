@@ -11,7 +11,7 @@ router.post('/', validate, async(req, res) => {
     try {
         if (user && bcrypt.compareSync(password, user.password)) {
             const token = generateToken(user)
-            res.status(200).json({ message: `Welcome ${user.username}! Your token: ${token}`})
+            res.status(200).json({ message: `Welcome ${user.username}! Your token is: `, token})
         } else {
             res.status(401).json({message: 'Username or password is incorrect'})
         }
